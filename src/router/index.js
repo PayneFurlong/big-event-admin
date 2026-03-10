@@ -33,8 +33,8 @@ const router = createRouter({
           component: () => import('@/views/user/UserProfile.vue')
         },
         {
-          path: '/user/avator',
-          component: () => import('@/views/user/UserAvator.vue')
+          path: '/user/avatar',
+          component: () => import('@/views/user/UserAvatar.vue')
         },
         {
           path: '/user/password',
