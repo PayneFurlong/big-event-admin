@@ -1,85 +1,46 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+// 在 Vue3 CompositionAPI 中
+// 1. 获取路由对象 router useRouter
+//    const router = useRouter()
+// 2. 获取路由参数 route useRoute
+//    const route = useRoute()
+import { useRoute, useRouter } from 'vue-router'
+import { useUserStore, useCountStore } from './stores'
+const route = useRoute()
+const router = useRouter()
+const getList = () => {
+  router.push('/list')
+  console.log(route, router)
+}
+
+const UserStore = useUserStore()
+const countStroe = useCountStore()
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <RouterView></RouterView>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <br />
+  <hr />
+  <hr />
+  <hr />
+  <!-- ElementPlus 例子 -->
+  <Base-Test></Base-Test>
+  <div class="box">我是Box</div>
+  <!-- 路由跳转测试 -->
+  <el-button @click="$router.push('/home')">home</el-button>
+  <el-button @click="getList">list</el-button>
+  <!-- 按钮样式 -->
+  <el-button type="primary">primary</el-button>
+  <el-button type="success">success</el-button>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <!-- 仓库 -->
+  <p>{{ UserStore.token }}</p>
+  <el-button @click="UserStore.setToken('awasdkuhaskf')">登录</el-button>
+  <el-button @click="UserStore.removeToken">退出</el-button>
+  <br /><br />
+  <p>{{ countStroe.count }}</p>
+  <button @click="countStroe.addCount(2)">加2</button>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
+<style scoped></style>
