@@ -92,7 +92,7 @@ const login = async () => {
   // 发送登录请求
   const res = await userLoginService(formModel.value)
   // 存入 token
-  userStore.setToken(res)
+  userStore.setToken(res.data.token)
   // 登录成功的提示框
   ElMessage.success('登录成功')
   // 跳转至首页
