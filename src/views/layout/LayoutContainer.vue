@@ -111,7 +111,10 @@ const handleCommand = async (key) => {
             userStore.user.nickname || userStore.user.username
           }}</strong>
         </div>
-        <el-dropdown placement="bottom-end" @command="handleCommand">
+        <el-dropdown
+          placement="bottom-end"
+          @command="handleCommand"
+        >
           <!-- 展示给用户，默认看到的 -->
           <span class="el-dropdown__box">
             <el-avatar :src="userStore.user.user_pic || avatar" />
@@ -122,16 +125,24 @@ const handleCommand = async (key) => {
           <!-- 折叠的下拉部分 -->
           <template #dropdown>
             <el-dropdown-menu>
-              <el-dropdown-item command="profile" :icon="User"
+              <el-dropdown-item
+                command="profile"
+                :icon="User"
                 >基本资料</el-dropdown-item
               >
-              <el-dropdown-item command="avatar" :icon="Crop"
+              <el-dropdown-item
+                command="avatar"
+                :icon="Crop"
                 >更换头像</el-dropdown-item
               >
-              <el-dropdown-item command="password" :icon="EditPen"
+              <el-dropdown-item
+                command="password"
+                :icon="EditPen"
                 >重置密码</el-dropdown-item
               >
-              <el-dropdown-item command="logout" :icon="SwitchButton"
+              <el-dropdown-item
+                command="logout"
+                :icon="SwitchButton"
                 >退出登录</el-dropdown-item
               >
             </el-dropdown-menu>

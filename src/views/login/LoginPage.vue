@@ -130,8 +130,15 @@ watch(isRegister, () => {
       (4) el-form-itme => prop 配置生效的是哪个校验规则 (与 rules 中的字段要对应)
   -->
   <el-row class="login-page">
-    <el-col :span="12" class="bg"></el-col>
-    <el-col :span="6" :offset="3" class="form">
+    <el-col
+      :span="12"
+      class="bg"
+    ></el-col>
+    <el-col
+      :span="6"
+      :offset="3"
+      class="form"
+    >
       <!-- 注册相关表单 -->
       <el-form
         :model="formModel"
@@ -178,7 +185,11 @@ watch(isRegister, () => {
           </el-button>
         </el-form-item>
         <el-form-item class="flex">
-          <el-link type="info" :underline="false" @click="isRegister = false">
+          <el-link
+            type="info"
+            :underline="false"
+            @click="isRegister = false"
+          >
             ← 返回
           </el-link>
         </el-form-item>
@@ -214,7 +225,11 @@ watch(isRegister, () => {
         <el-form-item class="flex">
           <div class="flex">
             <el-checkbox>记住我</el-checkbox>
-            <el-link type="primary" :underline="false">忘记密码？</el-link>
+            <el-link
+              type="primary"
+              :underline="false"
+              >忘记密码？</el-link
+            >
           </div>
         </el-form-item>
         <el-form-item>
@@ -227,7 +242,11 @@ watch(isRegister, () => {
           >
         </el-form-item>
         <el-form-item class="flex">
-          <el-link type="info" :underline="false" @click="isRegister = true">
+          <el-link
+            type="info"
+            :underline="false"
+            @click="isRegister = true"
+          >
             注册 →
           </el-link>
         </el-form-item>

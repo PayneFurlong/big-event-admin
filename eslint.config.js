@@ -58,6 +58,21 @@ export default defineConfig([
       // 启用 Prettier 的格式校验规则（只警告，不报错）
       'prettier/prettier': 'warn',
 
+      'vue/max-attributes-per-line': [
+        'error',
+        {
+          singleline: 1,
+          multiline: 1
+        }
+      ],
+
+      'vue/html-closing-bracket-newline': [
+        'error',
+        {
+          singleline: 'never',
+          multiline: 'always'
+        }
+      ],
       // Vue 组件命名规则：必须为多单词（防止与原生元素冲突）
       'vue/multi-word-component-names': [
         'warn',
@@ -66,7 +81,6 @@ export default defineConfig([
           ignores: ['index']
         }
       ],
-
       // 关闭 props 解构校验（允许在 setup 中使用解构语法）
       'vue/no-setup-props-destructure': ['off'],
 
