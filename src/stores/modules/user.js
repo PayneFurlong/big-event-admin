@@ -22,6 +22,7 @@ export const useUserStore = defineStore(
     // 获取用户数据
     const getUser = async () => {
       const res = await userGetInfoService() // 请求数据拦截
+      //  存储数据至 Pinia
       user.value = res.data.data
     }
     // 提交用户数据
