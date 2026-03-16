@@ -1,44 +1,42 @@
-# Vue3_LargeEvent_Admin
+# Big Event Admin
 
-This template should help get you started developing with Vue 3 in Vite.
+基于 Vue3 构建的后台内容管理系统（CMS）。
 
-## Recommended IDE Setup
+## 项目简介
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+该项目为一个后台管理系统，实现用户登录、文章分类管理、文章发布与管理等功能。
 
-## Recommended Browser Setup
+主要用于练习 Vue3 组件化开发及前端工程化实践。
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## 技术栈
 
-## Customize configuration
+- Vue3
+- Vite
+- Pinia
+- Vue Router
+- Axios
+- Element Plus
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 项目功能
 
-## Project Setup
+- 用户登录认证
+- 文章分类管理
+- 文章发布与管理
+- 富文本编辑
+- 封面图片上传与预览
+- Token 鉴权与路由守卫
 
-```sh
-pnpm install
-```
+## 项目运行
 
-### Compile and Hot-Reload for Development
+```bash
+npm install
+npm run dev
 
-```sh
-pnpm dev
-```
-
-### Compile and Minify for Production
-
-```sh
-pnpm build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
-```
+项目结构
+src
+ ├─ api
+ ├─ components
+ ├─ router
+ ├─ stores
+ ├─ utils
+ └─ views
