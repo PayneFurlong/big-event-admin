@@ -29,12 +29,13 @@
 ## 项目运行
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 
 项目结构
 src
  ├─ api
+ ├─ assets
  ├─ components
  ├─ router
  ├─ stores
